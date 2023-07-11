@@ -9,4 +9,8 @@ public interface BookService {
     List<Book> getAllBooks();
 
     Book createBook(Book book);
+
+    List<Book> searchBooksByTitle(String title);
 }
+
+

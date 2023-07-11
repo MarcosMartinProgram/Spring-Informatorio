@@ -46,4 +46,17 @@ public class BookServiceImpl implements BookService {
 
         return book;
     }
+    @Override
+    public List<Book> searchBooksByTitle(String title) {
+        List<Book> searchResults = new ArrayList<>();
+
+        for (Book book : bookMap.values()) {
+            if (book.getTitle().contains(title)) {
+                searchResults.add(book);
+            }
+        }
+
+        return searchResults;
+    }
+
 }

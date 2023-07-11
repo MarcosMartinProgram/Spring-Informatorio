@@ -4,10 +4,7 @@ package com.info.primeraapp.controller;
 import com.info.primeraapp.domain.Book;
 import com.info.primeraapp.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,4 +32,11 @@ public class BookController {
     public Book createBook(@RequestBody Book book){
         return bookService.createBook(book);
     }
+
+    @GetMapping("/api/v1/book/search")
+    public List<Book> searchBooksByTitle(@RequestParam("title") String title) {
+        return bookService.searchBooksByTitle(title);
+    }
 }
+
+
