@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController  // Anotacion a nivel de clase
 public class BookController {
@@ -37,6 +39,23 @@ public class BookController {
     public List<Book> searchBooksByTitle(@RequestParam("title") String title) {
         return bookService.searchBooksByTitle(title);
     }
+
+    //PUT --> Actualizar un libro
+    @PutMapping("/api/v1/book/{idBook}")
+    public String updateBook(@PathVariable(value ="idBook") UUID idBook, @RequestBody Book bookUpdated){
+
+        Optional<Book> book = bookService.updateBook(idBook, bookUpdated);
+
+        if(book.isEmpty()){
+            System.out.println("Book not found");
+            return "Book not found";
+        }else {
+            System.out.println("Book updated");
+            return "/api/v1/book/"+book.get().getUuid();
+        }
+
+    }
+    
 }
 
 
