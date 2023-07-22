@@ -5,6 +5,7 @@ import com.info.primeraapp.domain.Book;
 import com.info.primeraapp.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.List;
 import java.util.Optional;
@@ -55,7 +56,15 @@ public class BookController {
         }
 
     }
-    
+    @DeleteMapping("/api/v1/book/{idBook}")
+    public String deleteBook(@PathVariable(value = "idBook") UUID idBook){
+        Optional<Boolean> isDeleted = bookService.deleteBook(idBook);
+        if (isDeleted.orElse(false)) {
+            return "Book with Id " + idBook + "has been deleted.";
+        }else {
+            return "Book not found whit ID " + idBook + ". Deletion failed.";
+        }
+    }
 }
 
 

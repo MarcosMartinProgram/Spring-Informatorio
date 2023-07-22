@@ -81,5 +81,11 @@ public class BookServiceImpl implements BookService {
         }
 
     }
+    @Override
+    public Optional<Boolean> deleteBook(UUID uuidBook) {
+        Book removedBook = bookMap.remove(uuidBook);
+        return Optional.ofNullable(removedBook != null);
+    }
+
 
 }

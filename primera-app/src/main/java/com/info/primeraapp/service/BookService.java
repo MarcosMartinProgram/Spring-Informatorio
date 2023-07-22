@@ -14,6 +14,8 @@ public interface BookService {
     List<Book> searchBooksByTitle(String title);
 
     Optional<Book> updateBook(UUID uuidBook, Book bookUpdated);
+
+    Optional<Boolean> deleteBook(UUID idBook);
 }
 
 
