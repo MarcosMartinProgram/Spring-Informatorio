@@ -1,9 +1,10 @@
 package com.info.primeraapp.service;
 
 import com.info.primeraapp.domain.Book;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 public interface BookService {
     List<Book> getAllBooks();
@@ -11,6 +12,10 @@ public interface BookService {
     Book createBook(Book book);
 
     List<Book> searchBooksByTitle(String title);
+
+    Optional<Book> updateBook(UUID uuidBook, Book bookUpdated);
+
+    Optional<Boolean> deleteBook(UUID idBook);
 }
 
 
