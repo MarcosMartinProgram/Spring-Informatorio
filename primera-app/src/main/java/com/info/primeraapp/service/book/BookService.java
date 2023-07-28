@@ -1,4 +1,4 @@
-package com.info.primeraapp.service;
+package com.info.primeraapp.service.book;
 
 import com.info.primeraapp.domain.Book;
 
