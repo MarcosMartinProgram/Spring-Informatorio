@@ -2,11 +2,10 @@ package com.info.primeraapp.controller;
 
 
 import com.info.primeraapp.domain.Book;
-import com.info.primeraapp.service.BookService;
+import com.info.primeraapp.service.book.BookService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,8 +1,8 @@
-package com.info.primeraapp.service.impl;
+package com.info.primeraapp.service.book.impl;
 
 import com.info.primeraapp.domain.Book;
 import com.info.primeraapp.repository.book.BookRepository;
-import com.info.primeraapp.service.BookService;
+import com.info.primeraapp.service.book.BookService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
